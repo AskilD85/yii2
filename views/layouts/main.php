@@ -50,7 +50,7 @@ AppAsset::register($this);
     }else{
         if(!Yii::$app->user->isGuest && Yii::$app->user->can('user') ){
             $menuItems = [
-            ['label' => 'Профиль', 'url' => ['/user/view?id='. Yii::$app->user->identity->id]],
+            ['label' => 'Профиль', 'url' => ['/user']],
 
             ];
     } 

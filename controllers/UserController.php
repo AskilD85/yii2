@@ -16,11 +16,11 @@ class UserController extends Controller
 {
    
 
-    public function actionView()
+    public function actionIndex()
     {
         //просмотр только своего профиля
         $user_id = \Yii::$app->user->identity->id;
-        return $this->render('view', [
+        return $this->render('index', [
             'model' => $this->findModel($user_id),
         ]);
     }
