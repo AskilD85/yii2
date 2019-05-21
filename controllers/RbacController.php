@@ -34,14 +34,18 @@ class RbacController extends Controller {
         $createRequest = $auth->createPermission('CreateRequest');
         $createRequest->description = 'Создание заявки';
         
-        $deleteAdmin = $auth->createPermission('deleteUser');
-        $deleteAdmin->description = 'Удаление пользователя';
+        $deleteUser = $auth->createPermission('deleteUser');
+        $deleteUser->description = 'Удаление пользователя';
+        
+        $deleteAdmin = $auth->createPermission('deleteAdmin');
+        $deleteAdmin->description = 'Удаление админа';
         
         // Запишем эти разрешения в БД
         $auth->add($createUser);
         $auth->add($createRequest);
         $auth->add($createAdmin);
         $auth->add($deleteAdmin);
+        $auth->add($deleteUser);
         
         // Теперь добавим наследования. Для роли editor мы добавим разрешение updateNews,
         // а для админа добавим наследование от роли editor и еще добавим собственное разрешение viewAdminPage
@@ -55,6 +59,7 @@ class RbacController extends Controller {
         // Еще админ имеет собственное разрешение - «Просмотр админки»
         $auth->addChild($admin, $createAdmin);
         $auth->addChild($admin, $deleteAdmin);
+        $auth->addChild($admin, $deleteUser);
         
     }
 }

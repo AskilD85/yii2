@@ -45,7 +45,7 @@ class Admins extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username'], 'required'],
+            [['username','password'], 'required'],
             [['username', 'password_hash', 'password_reset_token', 'email', 'role'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             ['username', 'unique'],

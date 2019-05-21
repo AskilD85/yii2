@@ -51,7 +51,7 @@ namespace app\models;
         {
             return [
                 ['email','email'],
-                ['username','required'],
+                [['username','email'],'required'],
                 
             ];
         }

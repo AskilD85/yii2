@@ -30,9 +30,10 @@ class Request extends \yii\db\ActiveRecord
     {
         return [
             [['reg_date'], 'safe'],
-            [['user', 'email'], 'string','min'=>6, 'max' => 20],
-            [['status'], 'string', 'max' => 10],
+            [['user','email'],'required'],
+            [['user', 'email'], 'string','min'=>4, 'max' => 50],
             ['email','email'],
+            ['user', 'unique','targetAttribute' => 'user','message' => 'Извините, такой login уже существует в базе данных',],
             ['email', 'unique','targetAttribute' => 'email','message' => 'Извините, такой e-mail уже существует в базе данных',]
         ];
     }

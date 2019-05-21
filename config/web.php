@@ -30,7 +30,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => false,
-            'authTimeout' => 60, //время жизни сессии
+            'authTimeout' => 120, //время жизни сессии
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
