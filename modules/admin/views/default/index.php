@@ -1,10 +1,7 @@
 <div class="admin-default-index">
-    <h1><?= $this->context->action->uniqueId ?></h1>
+    <h1>Админка!</h1>
     <p>
-        Админка!
+        Доступ только пользователям с ролью "admin"
     </p>
-    <p>
-        You may customize this page by editing the following file:<br>
-        <code><?= __FILE__ ?></code>
-    </p>
+    
 </div>
