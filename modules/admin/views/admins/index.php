@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\AdminsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Admins';
+$this->title = 'Администраторы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="admins-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Admins', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать админа', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

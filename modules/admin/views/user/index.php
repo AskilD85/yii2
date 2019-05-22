@@ -24,7 +24,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'fullname',
             'email:email',
             'reg_date',
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+            'header'=>'Действия', 
+            'headerOptions' => ['width' => '100'],
+            'template' => '{view}{delete}{link}',
+        ],
         ],
     ]); ?>
 
