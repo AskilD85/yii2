@@ -207,22 +207,31 @@ class RequestController extends Controller
     public function actionClear($id) {
         
         $model = $this->findModel($id);
-       
-        if($model->status === 'Принят'){
-            Yii::$app->session->SetFlash('error','Эта заявка уже принята! Удалите пользователя!');
-            return $this->redirect('index');
-        }
-        if($model->status === 'Отклонена'){
-            Yii::$app->session->SetFlash('error','Эта заявка уже отклонена!');
+
+        
+        if($model->status === 'Новая'){
+          
+        $model->status = 'Отклонена';
+        $model->save();
             return $this->redirect('index');
         }else{
-            if($model->status === 'Новая'){
-            $model->status = 'Отклонена';
-            $model->save();
-            return $this->redirect('index');
+            if($model->status === 'Принят'){
+                Yii::$app->session->SetFlash('error','Эта заявка уже принята!!');
+                return $this->redirect('index');
+        }
+        
+            if($model->status === 'Отклонена'){
+                Yii::$app->session->SetFlash('error','Эта заявка уже отклонена!');
+                return $this->redirect('index');
             }
         }
         
+        
+        
+        
+        
+        
+                
         
         
     }

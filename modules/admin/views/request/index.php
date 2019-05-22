@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'visibleButtons' => [
 
                     'confirm' => true,
-                    'clear' => true//function($model) { return true; },
+                    'clear' => function($model) { return true; },
                 ],
             'buttons' => [
             'confirm' => function ($url,$model,$key) {

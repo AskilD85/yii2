@@ -33,7 +33,7 @@ class Request extends \yii\db\ActiveRecord
             [['user','email'],'required'],
             [['user', 'email'], 'string','min'=>4, 'max' => 50],
             ['email','email'],
-            ['user', 'unique','targetAttribute' => 'user','message' => 'Извините, такой login уже существует в базе данных',],
+            
             ['email', 'unique','targetAttribute' => 'email','message' => 'Извините, такой e-mail уже существует в базе данных',]
         ];
     }

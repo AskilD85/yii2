@@ -53,7 +53,7 @@ class RequestController extends Controller
                 
                 Yii::$app->session->SetFlash('success','Данные приняты');
                 
-                return $this->refresh();
+                return $this->redirect('/site/login');
                 
             }else{
                
