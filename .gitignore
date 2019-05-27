@@ -1,0 +1,11 @@
+
+
+/vendor
+/nbproject
+!/components/
+!/config/
+!/controllers/
+!/migrations
+!/models/
+!/modules/
+!/views/
