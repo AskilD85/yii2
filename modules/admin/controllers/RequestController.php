@@ -143,7 +143,7 @@ class RequestController extends Controller
         
         $model = Request::findOne($id);
         
-        if($model->status === 'Принят'){
+        if($model->status = 'Принят'){
             Yii::$app->session->SetFlash('success','Эта заявка уже принята!!');
             return $this->redirect('index');
         }

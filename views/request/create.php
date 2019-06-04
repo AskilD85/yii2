@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Request */
 
 $this->title = 'Оставить заявку на подключение';
-$this->params['breadcrumbs'][] = ['label' => 'Заявка', 'url' => ['index']];
+
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="request-create">

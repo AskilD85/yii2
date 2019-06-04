@@ -61,14 +61,13 @@ class Admins extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'username' => 'Login',
-            'auth_key' => 'Auth Key',
-            'password_hash' => 'Password Hash',
-            'password_reset_token' => 'Password Reset Token',
-            'email' => 'Email',
-            'role' => 'Role',
-            'reg_date' => 'Дата регистрации',
+            'id'        => 'ID',
+            'username'  => 'Login',
+            'auth_key'  => 'Auth Key',
+            'fullname'  => 'Полное имя',
+            'email'     => 'Email',
+            'role'      => 'Role',
+            'reg_date'  => 'Дата регистрации',
         ];
     }
     /**

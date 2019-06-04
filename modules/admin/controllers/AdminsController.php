@@ -138,7 +138,12 @@ class AdminsController extends Controller
      */
     public function actionDelete($id)
     {
+        
         $this->findModel($id)->delete();
+        	
+        $auth   =   \Yii::$app->authManager ;
+        // метод ниже очищает все права пользователя с id = $id
+        $auth->revokeAll( $id ) ;
 
         return $this->redirect(['index']);
     }

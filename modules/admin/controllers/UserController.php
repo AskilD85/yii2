@@ -94,6 +94,10 @@ class UserController extends Controller
         $request = Request::findOne(['email'=>$email])->delete();
         $this->findModel($id)->delete();
         
+        $auth   =   \Yii::$app->authManager ;
+        // метод ниже очищает все права пользователя с id = $id
+        $auth->revokeAll( $id ) ;
+        
         return $this->redirect(['index']);
     }
 

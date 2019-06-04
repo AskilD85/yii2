@@ -1,13 +1,14 @@
 <?php
 
-namespace app\controllers;
+namespace app\commands;
 
+use yii\console\Controller;
+use yii\console\ExitCode;
 use Yii;
-use yii\web\Controller;
-use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
+use app\models\User;
+
 /**
- * Инициализатор RBAC выполняется в консоли php yii rbac/init
+ * Инициализатор RBAC выполняется в консоли111 php yii rbac/init
  */
 class RbacController extends Controller {
 
@@ -61,6 +62,27 @@ class RbacController extends Controller {
         $auth->addChild($admin, $deleteAdmin);
         $auth->addChild($admin, $deleteUser);
         
+        
+        
+    }
+    public function actionAddAdmin() {
+        $model = User::find()->where(['username' => 'admin55'])->one();
+        if (empty($model)) {
+            $user = new User();
+            $user->username = 'admin55';
+            $user->role = 'admin';
+            $user->email = 'admin@admin.ru';
+            $user->setPassword('admin55');
+            $user->generateAuthKey();
+            if ($user->save()) {
+                echo 'good';
+                 $auth = Yii::$app->authManager;
+                $role_admin = $auth->getRole('admin'); // Получаем роль admin
+                $auth->assign($role_admin, $user->id);
+            }else{
+                echo 'erorr';
+            }
+        }
     }
 }
 
